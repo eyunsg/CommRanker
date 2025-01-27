@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CommRanker</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body style="background-color: var(--bs-body-color)">
+    <nav class="navbar navbar-expand-lg bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand text-white fw-bold ms-3" href="/">CommRanker</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active text-white" aria-current="page" href="/"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                type="button"
+                class="nav-link text-white"
+                data-bs-toggle="modal"
+                data-bs-target="#contact-Modal"
+              >
+                Contact
+              </a>
+              <div
+                class="modal fade"
+                id="contact-Modal"
+                tabindex="-1"
+                aria-labelledby="contact-ModalLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="contact-ModalLabel">
+                        Developer Email
+                      </h1>
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div class="modal-body">iyunsung423@gmail.com</div>
+                    <div class="modal-footer">
+                      <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal"
+                      >
+                        닫기
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="row d-flex justify-content-center gap-4 mt-5">
+      <div id="title-card" class="text-white text-center">
+        <h2>매번 바뀌는 ETF 수수료</h2>
+        <h2>총 보수만 공시하는 증권사</h2>
+        <h2>CommRanker에서 한눈에 비교하세요</h2>
+      </div>
+      <div id="item-list" class="row d-flex justify-content-center gap-4 mb-3">
+        <!-- 첫 번째 카드 -->
+        <div
+          id="item-card"
+          class="shadow w-25 card border-primary border-2"
+          aria-hidden="true"
+        >
+          <div class="card-body">
+            <h5 class="card-title placeholder-glow">
+              <span class="placeholder col-10"></span>
+            </h5>
+            <span class="badge text-bg-primary mb-1 fs-6">👑</span>
+            <span class="badge text-bg-primary mb-1 fs-6">1위</span>
+            <span class="badge text-bg-primary mb-1 fs-6"
+              >가장 낮은 수수료</span
+            >
+            <p class="card-text placeholder-glow">
+              <span>총 보수: </span>
+              <span class="placeholder col-3"></span>
+              <span>%</span>
+              <br />
+
+              <span>기타 비용: </span>
+              <span class="placeholder col-3"></span>
+              <span>%</span>
+              <br />
+
+              <span>판매 수수료: </span>
+              <span class="placeholder col-3"></span>
+              <span>%</span>
+              <br />
+
+              <span>중개 수수료: </span>
+              <span class="placeholder col-3"></span>
+              <span>%</span>
+            </p>
+            <a
+              class="btn btn-primary disabled placeholder col-6 card-btn"
+              aria-disabled="true"
+            ></a>
+          </div>
+        </div>
+
+        <!-- 두 번째 카드 -->
+        <div
+          id="item-card"
+          class="shadow card w-25 border-warning border-2"
+          aria-hidden="true"
+        >
+          <div class="card-body">
+            <h5 class="card-title placeholder-glow">
+              <span class="placeholder col-10"></span>
+            </h5>
+            <span class="badge text-bg-warning mb-1 fs-6">😐</span>
+            <span class="badge text-bg-warning mb-1 fs-6">2위</span>
+            <p class="card-text placeholder-glow">
+              <span>총 보수: </span>
+              <span class="placeholder col-3"></span>
+              <span>%</span>
+              <br />
+
+              <span>기타 비용: </span>
+              <span class="placeholder col-3"></span>
+              <span>%</span>
+              <br />
+
+              <span>판매 수수료: </span>
+              <span class="placeholder col-3"></span>
+              <span>%</span>
+              <br />
+
+              <span>중개 수수료: </span>
+              <span class="placeholder col-3"></span>
+              <span>%</span>
+            </p>
+            <a
+              class="btn btn-warning disabled placeholder col-6 card-btn"
+              aria-disabled="true"
+            ></a>
+          </div>
+        </div>
+
+        <!-- 세 번째 카드 -->
+        <div
+          id="item-card"
+          class="shadow card w-25 border-danger border-2"
+          aria-hidden="true"
+        >
+          <div class="card-body">
+            <h5 class="card-title placeholder-glow">
+              <span class="placeholder col-10"></span>
+            </h5>
+            <span class="badge text-bg-danger mb-1 fs-6">☹️</span>
+            <span class="badge text-bg-danger mb-1 fs-6"
+              >최저수수료 대비 2배 이상</span
+            >
+            <p class="card-text placeholder-glow">
+              <span>총 보수: </span>
+              <span class="placeholder col-3"></span>
+              <span>%</span>
+              <br />
+
+              <span>기타 비용: </span>
+              <span class="placeholder col-3"></span>
+              <span>%</span>
+              <br />
+
+              <span>판매 수수료: </span>
+              <span class="placeholder col-3"></span>
+              <span>%</span>
+              <br />
+
+              <span>중개 수수료: </span>
+              <span class="placeholder col-3"></span>
+              <span>%</span>
+            </p>
+            <a
+              class="btn btn-danger disabled placeholder col-6 card-btn"
+              aria-disabled="true"
+            ></a>
+          </div>
+        </div>
+      </div>
+      <div id="search-card" class="card text-center w-50">
+        <div class="card-header">똑똑하게 투자하기</div>
+        <div class="card-body">
+          <h4 class="card-title">
+            총 보수 + 기타비용 + 판매수수료 + 중개수수료
+          </h4>
+          <h5 class="card-text">
+            실제 지불하는 <strong>총 비용</strong>을 조회하세요
+          </h5>
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="inlineCheckbox1"
+              value="sp-500"
+              checked
+            />
+            <label class="form-check-label" for="sp-500">S&P 500</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="inlineCheckbox2"
+              value="nasdaq-100"
+            />
+            <label class="form-check-label" for="nasdaq-100">나스닥 100</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="inlineCheckbox3"
+              value="dow-jones"
+            />
+            <label class="form-check-label" for="dow-jones"
+              >미국배당 다우존스</label
+            >
+          </div>
+          <br />
+          <button id="calculation-btn" class="btn btn-primary mt-2">
+            최신 수수료 조회하기
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+    <script>
+      const checkboxes = document.querySelectorAll(".form-check-input");
+
+      checkboxes.forEach((checkbox) => {
+        checkbox.addEventListener("change", function () {
+          if (this.checked) {
+            checkboxes.forEach((otherCheckbox) => {
+              if (otherCheckbox !== this) {
+                otherCheckbox.checked = false;
+              }
+            });
+          }
+        });
+      });
+
+      $("#calculation-btn").click(function () {
+        let selectedValue = null;
+        let fundCategory = "";
+
+        checkboxes.forEach((checkbox) => {
+          if (checkbox.checked) {
+            selectedValue = checkbox.value;
+          }
+
+          switch (selectedValue) {
+            case "sp-500":
+              console.log("S&P 500");
+              fundCategory = "sp500";
+              break;
+            case "nasdaq-100":
+              console.log("Nasdaq 100");
+              fundCategory = "nasdaq100";
+              break;
+            case "dow-jones":
+              console.log("Dow Jones");
+              fundCategory = "dowjones";
+              break;
+          }
+        });
+
+        $(".card-btn").html(`
+          <div class="spinner-border spinner-border-sm" role="status">
+          <span class="visually-hidden">Loading...</span>
+          </div>
+        `);
+        this.textContent = "불러오는 중...";
+        this.disabled = true;
+
+        $.ajax({
+          url: `/api/commission/${fundCategory}`,
+          type: "get",
+          success: (data) => {
+            const itemList = $("#item-list");
+            itemList.empty();
+
+            $("#search-card").hide();
+
+            data.sort((a, b) => a.totalCommission - b.totalCommission);
+
+            const firstCommission = data[0].totalCommission;
+
+            data.forEach((fund) => {
+              fund.totalCommission = fund.totalCommission.toFixed(4);
+            });
+
+            data.forEach((fund) => {
+              const fundNameMapping = {
+                "KBRISE미국나스닥100증권상장지수투자신탁(주식)":
+                  "RISE 나스닥 100 일반",
+                "한국투자ACE미국나스닥100증권상장지수투자신탁(주식)":
+                  "ACE 나스닥 100 일반",
+                "미래에셋TIGER미국나스닥100증권상장지수투자신탁(주식)":
+                  "TIGER 나스닥 100 일반",
+                "신한SOL미국나스닥100증권상장지수투자신탁[주식]":
+                  "SOL 나스닥 100 일반",
+                "삼성KODEX미국나스닥100TotalReturn증권상장지수투자신탁[주식]":
+                  "KODEX 나스닥 100 TR",
+
+                "KBRISE미국S&P500증권상장지수투자신탁(주식)":
+                  "RISE S&P 500 일반",
+                "한국투자ACE미국S&P500증권상장지수투자신탁(주식)":
+                  "ACE S&P 500 일반",
+                "미래에셋TIGER미국S&P500증권상장지수투자신탁(주식)":
+                  "TIGER S&P 500 일반",
+                "삼성KODEX미국S&P500TotalReturn증권상장지수투자신탁[주식]":
+                  "KODEX S&P 500 TR",
+                "신한SOL미국S&P500증권상장지수투자신탁[주식]":
+                  "SOL S&P 500 일반",
+                "우리WON미국S&P500증권상장지수투자신탁(주식)":
+                  "WON S&P 500 일반",
+                "한화PLUS미국S&P500증권상장지수투자신탁(주식)":
+                  "PLUS S&P 500  일반",
+                "키움KOSEF미국S&P500증권상장지수투자신탁[주식]":
+                  "KOSEF S&P 500 일반",
+                "NH-AmundiHANARO미국S&P500증권상장지수투자신탁(주식)":
+                  "HANARO S&P 500 일반",
+                "삼성KODEX미국배당다우존스증권상장지수투자신탁[주식]":
+                  "KODEX 미국배당다우존스 일반",
+                "미래에셋TIGER미국배당다우존스증권상장지수투자신탁(주식)":
+                  "TIGER 미국배당다우존스 일반",
+                "신한SOL미국배당다우존스증권상장지수투자신탁[주식]":
+                  "SOL 미국배당다우존스 일반",
+                "신한SOL미국배당다우존스TotalReturn증권상장지수투자신탁[주식]":
+                  "SOL 미국배당다우존스 TR",
+                "한국투자ACE미국배당다우존스증권상장지수투자신탁(주식)":
+                  "ACE 미국배당다우존스 일반",
+                "미래에셋TIGER골드선물특별자산상장지수투자신탁[금-파생형](H)":
+                  "TIGER 골드선물 (H)",
+                "삼성KODEX골드선물특별자산상장지수투자신탁[금-파생형](H)":
+                  "KODEX 골드선물 (H)",
+              };
+
+              if (fundNameMapping[fund.fundName]) {
+                fund.fundName = fundNameMapping[fund.fundName];
+              }
+            });
+
+            for (let i = 0; i < data.length; i++) {
+              // 첫 번째 요소
+              if (i === 0) {
+                if (data[i].fundName.includes("TR")) {
+                  const fundElement = firstTRCard(i);
+                  itemList.append(fundElement);
+                } else {
+                  const fundElement = firstCard(i);
+                  itemList.append(fundElement);
+                }
+              } else if (firstCommission * 2 > data[i].totalCommission) {
+                if (data[i].fundName.includes("TR")) {
+                  const fundElement = secondTRCard(i);
+                  itemList.append(fundElement);
+                } else {
+                  const fundElement = secondCard(i);
+                  itemList.append(fundElement);
+                }
+              } else {
+                if (data[i].fundName.includes("TR")) {
+                  const fundElement = thirdTRCard(i);
+                  itemList.append(fundElement);
+                } else {
+                  const fundElement = thirdCard(i);
+                  itemList.append(fundElement);
+                }
+              }
+            }
+            $("#title-card")
+              .empty()
+              .append(
+                `
+              <div
+                class="card border-danger transparent-card mx-auto opacity-75"
+                style="width: 30%"
+              >
+                <div class="card-header">주의!</div>
+                <div class="card-body text-danger">
+                  <p class="card-text text-light">
+                    해당 자료는 <u>전월 마지막 영업일</u> 기준으로 조회합니다.
+                  </p>
+                  <p class="card-text text-light">
+                    정확한 수수료 정보는 해당 증권사를 참고하세요.
+                  </p>
+                </div>
+              </div>
+              `
+              )
+              .append(`<p class="text-white-50 mt-4">출처 - 금융투자협회</p>`);
+
+            function firstCard(i) {
+              return `
+                <div id="item-card" class="card w-75 border-primary border-2">
+                  <div class="card-body">
+                    <h5 class="card-title fw-bold">${data[i].fundName}</h5>
+                    <span class="badge text-bg-primary mb-2 fs-6">👑</span>
+                    <span class="badge text-bg-primary mb-2 fs-6">1위</span>
+                    <span class="badge text-bg-primary mb-2 fs-6"
+                      >가장 낮은 수수료</span
+                    >
+                    <p class="card-text text-black-50 mt-1">${
+                      data[i].assetManagementCompany
+                    }</p>
+                    <p class="card-text">총 보수: <strong>${
+                      data[i].managementCommission
+                    }%</strong></p>
+                    <p class="card-text">기타 비용: <strong>${
+                      data[i].otherCommission
+                    }%</strong></p>
+                    <p class="card-text">판매 수수료: <strong>${
+                      data[i].initialSalesCommission +
+                      data[i].postSalesCommission
+                    }%</strong></p>
+                    <p class="card-text">중개 수수료: <strong>${
+                      data[i].tradingCommission
+                    }%</strong></p>
+                    <a
+                      id="total-val"
+                      class="btn btn-primary col-6 card-btn w-100 fw-bold"
+                      >총 비용: <strong>${data[i].totalCommission}%</strong></a
+                    >
+                  </div>
+                </div>
+              `;
+            }
+            function firstTRCard(i) {
+              return `
+                <div id="item-card" class="card w-75 border-primary border-2">
+                  <div class="card-body">
+                    <h5 class="card-title fw-bold">
+                      ${data[i].fundName}
+                      <a type="button" data-bs-toggle="modal" data-bs-target="#TRModal">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle mb-1" viewBox="0 0 16 16">
+                          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                          <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                        </svg>
+                      </a>
+
+                      <div class="modal fade" id="TRModal" tabindex="-1" aria-labelledby="TRModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content bg-secondary">
+                            <div class="modal-header">
+                              <h1 class="modal-title fs-5 text-white" id="TRModalLabel">TR (Total Return)</h1>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body text-white fs-6 fw-light">
+                              배당을 분배금으로 나눠주지 않고 자동으로 재투자하는 방식
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      </h5>
+                    <span class="badge text-bg-primary mb-2 fs-6">👑</span>
+                    <span class="badge text-bg-primary mb-2 fs-6">1위</span>
+                    <span class="badge text-bg-primary mb-2 fs-6"
+                      >가장 낮은 수수료</span
+                    >
+                    <p class="card-text text-black-50 mt-1">${
+                      data[i].assetManagementCompany
+                    }</p>
+                    <p class="card-text">총 보수: <strong>${
+                      data[i].managementCommission
+                    }%</strong></p>
+                    <p class="card-text">기타 비용: <strong>${
+                      data[i].otherCommission
+                    }%</strong></p>
+                    <p class="card-text">판매 수수료: <strong>${
+                      data[i].initialSalesCommission +
+                      data[i].postSalesCommission
+                    }%</strong></p>
+                    <p class="card-text">중개 수수료: <strong>${
+                      data[i].tradingCommission
+                    }%</strong></p>
+                    <a
+                      id="total-val"
+                      class="btn btn-primary col-6 card-btn w-100 fw-bold"
+                      >총 비용: <strong>${data[i].totalCommission}%</strong></a
+                    >
+                  </div>
+                </div>
+              `;
+            }
+            function secondCard(i) {
+              return `
+                <div id="item-card" class="card w-25 border-warning border-2">
+                  <div class="card-body">
+                    <h5 class="card-title fw-bold">${data[i].fundName}</h5>
+                    <span class="badge text-bg-warning mb-2 fs-6">${
+                      i + 1
+                    }위</span>
+                    <p class="card-text text-black-50 mt-1">${
+                      data[i].assetManagementCompany
+                    }</p>
+                   <p class="card-text">총 보수: <strong>${
+                     data[i].managementCommission
+                   }%</strong></p>
+                    <p class="card-text">기타 비용: <strong>${
+                      data[i].otherCommission
+                    }%</strong></p>
+                    <p class="card-text">판매 수수료: <strong>${
+                      data[i].initialSalesCommission +
+                      data[i].postSalesCommission
+                    }%</strong></p>
+                    <p class="card-text">중개 수수료: <strong>${
+                      data[i].tradingCommission
+                    }%</strong></p>
+                    <a
+                      id="total-val"
+                      class="btn btn-warning col-6 card-btn w-100 fw-bold"
+                      >총 비용: <strong>${data[i].totalCommission}%</strong></a
+                    >
+                  </div>
+                </div>
+              `;
+            }
+            function secondTRCard(i) {
+              return `
+                <div id="item-card" class="card w-25 border-warning border-2">
+                  <div class="card-body">
+                    <h5 class="card-title fw-bold">
+                      ${data[i].fundName}
+                      <a type="button" data-bs-toggle="modal" data-bs-target="#TRModal">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle mb-1" viewBox="0 0 16 16">
+                          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                          <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                        </svg>
+                      </a>
+
+                      <div class="modal fade" id="TRModal" tabindex="-1" aria-labelledby="TRModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content bg-secondary">
+                            <div class="modal-header">
+                              <h1 class="modal-title fs-5 text-white" id="TRModalLabel">TR (Total Return)</h1>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body text-white fs-6 fw-light">
+                              배당을 분배금으로 나눠주지 않고 자동으로 재투자하는 방식
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      </h5>
+                    <span class="badge text-bg-warning mb-2 fs-6">${
+                      i + 1
+                    }위</span>
+                    <p class="card-text text-black-50 mt-1">${
+                      data[i].assetManagementCompany
+                    }</p>
+                   <p class="card-text">총 보수: <strong>${
+                     data[i].managementCommission
+                   }%</strong></p>
+                    <p class="card-text">기타 비용: <strong>${
+                      data[i].otherCommission
+                    }%</strong></p>
+                    <p class="card-text">판매 수수료: <strong>${
+                      data[i].initialSalesCommission +
+                      data[i].postSalesCommission
+                    }%</strong></p>
+                    <p class="card-text">중개 수수료: <strong>${
+                      data[i].tradingCommission
+                    }%</strong></p>
+                    <a
+                      id="total-val"
+                      class="btn btn-warning col-6 card-btn w-100 fw-bold"
+                      >총 비용: <strong>${data[i].totalCommission}%</strong></a
+                    >
+                  </div>
+                </div>
+              `;
+            }
+            function thirdCard(i) {
+              return `
+                <div id="item-card" class="card w-25 border-danger border-2">
+                  <div class="card-body">
+                    <h5 class="card-title fw-bold">${data[i].fundName}</h5>
+                    <span class="badge text-bg-danger mb-2 fs-6">☹️</span>
+                    <span class="badge text-bg-danger mb-2 fs-6">${
+                      i + 1
+                    }위</span>
+                    <span class="badge text-bg-danger mb-2 fs-6">최저수수료 대비 약 ${(
+                      data[i].totalCommission / firstCommission
+                    ).toFixed(0)}배</span>
+                    <p class="card-text text-black-50 mt-1">${
+                      data[i].assetManagementCompany
+                    }</p>
+                    <p class="card-text">총 보수: <strong>${
+                      data[i].managementCommission
+                    }%</strong></p>
+                    <p class="card-text">기타 비용: <strong>${
+                      data[i].otherCommission
+                    }%</strong></p>
+                    <p class="card-text">판매 수수료: <strong>${
+                      data[i].initialSalesCommission +
+                      data[i].postSalesCommission
+                    }%</strong></p>
+                    <p class="card-text">중개 수수료: <strong>${
+                      data[i].tradingCommission
+                    }%</strong></p>
+                    <a
+                      id="total-val"
+                      class="btn btn-danger col-6 card-btn w-100 fw-bold"
+                      >총 비용: <strong>${data[i].totalCommission}%</strong></a
+                    >
+                  </div>
+                </div>
+              `;
+            }
+            function thirdTRCard(i) {
+              return `
+                <div id="item-card" class="card w-25 border-danger border-2">
+                  <div class="card-body">
+                    <h5 class="card-title fw-bold">
+                      ${data[i].fundName}
+                      <a type="button" data-bs-toggle="modal" data-bs-target="#TRModal">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle mb-1" viewBox="0 0 16 16">
+                          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                          <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                        </svg>
+                      </a>
+
+                      <div class="modal fade" id="TRModal" tabindex="-1" aria-labelledby="TRModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content bg-secondary">
+                            <div class="modal-header">
+                              <h1 class="modal-title fs-5 text-white" id="TRModalLabel">TR (Total Return)</h1>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body text-white fs-6 fw-light">
+                              배당을 분배금으로 나눠주지 않고 자동으로 재투자하는 방식
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      </h5>
+                    <span class="badge text-bg-danger mb-2 fs-6">☹️</span>
+                    <span class="badge text-bg-danger mb-2 fs-6">${
+                      i + 1
+                    }위</span>
+                    <span class="badge text-bg-danger mb-2 fs-6">최저수수료 대비 약 ${(
+                      data[i].totalCommission / firstCommission
+                    ).toFixed(0)}배</span>
+                    <p class="card-text text-black-50 mt-1">${
+                      data[i].assetManagementCompany
+                    }</p>
+                    <p class="card-text">총 보수: <strong>${
+                      data[i].managementCommission
+                    }%</strong></p>
+                    <p class="card-text">기타 비용: <strong>${
+                      data[i].otherCommission
+                    }%</strong></p>
+                    <p class="card-text">판매 수수료: <strong>${
+                      data[i].initialSalesCommission +
+                      data[i].postSalesCommission
+                    }%</strong></p>
+                    <p class="card-text">중개 수수료: <strong>${
+                      data[i].tradingCommission
+                    }%</strong></p>
+                    <a
+                      id="total-val"
+                      class="btn btn-danger col-6 card-btn w-100 fw-bold"
+                      >총 비용: <strong>${data[i].totalCommission}%</strong></a
+                    >
+                  </div>
+                </div>
+              `;
+            }
+          },
+          error: (error) => {
+            console.log(error);
+            // 에러 발생 시 로딩 화면 숨기기
+            $("#loading").hide();
+          },
+        });
+      });
+    </script>
+  </body>
+</html>

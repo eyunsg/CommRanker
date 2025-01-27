@@ -1,0 +1,15 @@
+#item-card {
+  background-color: rgb(150, 150, 150);
+}
+
+#search-card {
+  background-color: rgb(200, 200, 200);
+}
+
+#total-val {
+  pointer-events: none;
+}
+
+.transparent-card {
+  background-color: transparent !important;
+}
